@@ -1,0 +1,115 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class functions {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        Random sc = new Random();
+
+        int numOfDice ;
+        int total = 0;
+
+        System.out.print("Enter the amount of dice to rolled: ");
+        numOfDice = scanner.nextInt();
+
+        if(numOfDice > 0){
+
+            for(int i = 0 ; i < numOfDice ; i++){
+                int roll = sc.nextInt(1 ,7);
+                printDie(roll);
+                System.out.println("you rolled: " + roll);
+                total = total + roll;
+
+            }
+            System.out.println("Total: "+total);
+
+
+        }
+        else{
+            System.out.println("Please Enter a valid number");
+        }
+
+    }
+    static void printDie(int roll){
+
+        String  roll1 = """
+                 -------
+                |       |
+                |   ●   |
+                |       |
+                 -------
+                """ ;
+
+        String  roll2 = """
+                 -------
+                |       |
+                |  ● ●  |
+                |       |
+                 -------
+                """ ;
+        String  roll3 = """
+                 -------
+                |       |
+                | ● ● ● |
+                |       |
+                 -------
+                """ ;
+        String  roll4 = """
+                 -------
+                | ●   ● |
+                |       |
+                | ●   ● |
+                 -------
+                """ ;
+        String  roll5 = """
+                 -------
+                | ●   ● |
+                |   ●   |
+                | ●   ● |
+                 -------
+                """ ;
+        String  roll6 = """
+                 -------
+                | ●   ● |
+                | ●   ● |
+                | ●   ● |
+                 -------
+                """ ;
+        switch (roll){
+            case 1 :
+                System.out.println(roll1);
+                break;
+            case 2:
+                System.out.println(roll2);
+                break;
+            case 3:
+                System.out.println(roll3);
+                break;
+            case 4:
+                System.out.println(roll4);
+                break;
+            case 5:
+                System.out.println(roll5);
+                break;
+            case 6:
+                System.out.println(roll6);
+                break;
+            default:
+                System.out.println("Invalid");
+
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
