@@ -1,0 +1,73 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+
+        double higestbalance = 0;
+        int richestCustomer = 0;
+
+
+        System.out.print("Enter the no. of customer: ");
+        int customer = sc.nextInt();
+
+        for (int i = 1; i <= customer; i++) {
+            double balance = 1000;
+            int overdrafts = 0;
+
+
+            System.out.print("Enter the no. of transaction of month of " + i + " customer: ");
+            int months = sc.nextInt();
+
+            for (int j = 1; j <= months; j++) {
+
+                System.out.print("Enter 1 for deposit and 2 for withdraw: ");
+                int action = sc.nextInt();
+
+                if (action == 1) {
+                    System.out.print("Enter the amount of deposit: ");
+                    int deposit = sc.nextInt();
+                    balance = balance + deposit;
+
+                } else if (action == 2) {
+                    System.out.print("Enter the amount of withdraw: ");
+                    int withdraw = sc.nextInt();
+
+
+                    balance = balance - withdraw;
+
+                } else {
+                    System.out.println("Invalid input by the user");
+                }
+                if (balance < 0) {
+                    overdrafts++;
+
+
+                }
+            }
+
+                 if (balance > 5000) {
+                    balance = balance + (balance * 0.05);
+
+                }
+
+            if(balance > higestbalance){
+                 higestbalance = balance ;
+                 richestCustomer = i ;
+
+            }
+            System.out.println("no. of times overdraft happens: " + overdrafts);
+            System.out.println("final balance of " + i +" customer at this end : " + balance);
+
+
+        }
+        System.out.println("Highest balance: "  + higestbalance + " by the " + richestCustomer + " customer");
+
+    }
+}
