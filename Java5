@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.println(binomial(5 ,2));
+        
+    }
+    static int fact(int n){
+
+        int fact = 1;
+
+        for(int i = 1 ; i <= n ; i++){
+            fact *= i;
+
+        }
+        return fact;
+
+    }
+    static int binomial(int n , int r){
+
+        int nfact = fact(n);
+        int rFact = fact(r);
+        int nrfact = fact(n-r);
+
+        return nfact / (rFact * nrfact);
+
+    }
+}
+
+
